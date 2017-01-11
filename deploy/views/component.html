@@ -1,0 +1,7 @@
+{% extends "template.html" %}
+
+{% block rightColumn %}
+  <h1>{{ componentName }}</h1>
+
+  <div class="changelog">{{ changelog | safe }}</div>
+{% endblock %}

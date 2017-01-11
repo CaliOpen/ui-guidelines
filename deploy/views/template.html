@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="/assets/styles.css">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, minimum-scale=1">
+  <title>Gandi UI</title>
+</head>
+<body>
+  <main>
+    <section class="left-column">
+      <header><a href="/">Gandi UI</a></header>
+
+      {% include "navigation.html" %}
+    </section>
+
+    <section class="right-column">
+      {% block rightColumn %}{% endblock %}
+    </section>
+  </main>
+</body>
+</html>

@@ -1,0 +1,31 @@
+<nav>
+  <ul>
+    {% for component in components %}
+      <li>
+        {% if component.versions.length %}
+          <a class="{{ "selected" if componentName === component.name }}"
+             href="/components/{{ component.name }}">
+            {{ component.name }}
+          </a>
+        {% endif %}
+
+        {% if not component.versions.length %}
+          <span class="disable">{{ component.name }}</span>
+        {% endif %}
+
+        {% if componentName === component.name %}
+          <ul>
+            {% for version in component.versions.sort().reverse() %}
+              <li>
+                <a class="{{ "selected" if componentVersion === version else "" }}"
+                   href="/components/{{ component.name }}/{{ version }}">
+                  Version {{ version }}
+                </a>
+              </li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      </li>
+    {% endfor %}
+  </ul>
+</nav>

@@ -1,0 +1,19 @@
+{% extends "template.html" %}
+
+{% block rightColumn %}
+  <h1>{{ componentName }}</h1>
+  <h2>Version {{ componentVersion }}</h2>
+
+  <div class="images">
+    {% if not componentImages.length %}
+      No images available.
+    {% endif %}
+
+    {% for image in componentImages.sort() %}
+      <div class="image">
+        <h5>{{ image.name }}</h5>
+        <img src="{{ image.src }}" />
+      </div>
+    {% endfor %}
+  </div>
+{% endblock %}

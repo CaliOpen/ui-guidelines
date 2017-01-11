@@ -1,0 +1,35 @@
+{
+  "name": "ui-guidelines",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "build:css": "lessc assets/styles.less assets/styles.css -x",
+    "build:js": "rm -rf dist && mkdir dist && babel src --out-dir dist",
+    "start:dev": "nodemon -e js,html,less src/index.js -x \"npm run build:css && node src/index.js\"",
+    "start:server": "node dist/index.js",
+    "lint": "eslint src",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "express": "^4.14.0",
+    "lodash": "^4.17.2",
+    "nunjucks": "^3.0.0",
+    "showdown": "^1.5.0"
+  },
+  "devDependencies": {
+    "babel-cli": "^6.18.0",
+    "babel-preset-es2015": "^6.18.0",
+    "eslint": "^3.11.1",
+    "eslint-config-airbnb-base": "^10.0.1",
+    "eslint-plugin-import": "^2.2.0",
+    "less": "^2.7.1",
+    "node-sass": "^3.13.0",
+    "nodemon": "^1.11.0"
+  },
+  "engines": {
+    "node": ">=6.0.0"
+  }
+}
